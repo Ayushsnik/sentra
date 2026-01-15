@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------- */
+/* CSS VARIABLES (shadcn) */
+/* -------------------- */
+
+:root {
+  --background: 210 20% 98%;
+  --foreground: 222 47% 11%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 214 20% 94%;
+  --secondary-foreground: 222 47% 20%;
+
+  --muted: 214 20% 96%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 214 20% 94%;
+  --accent-foreground: 222 47% 11%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 214 20% 90%;
+  --input: 214 20% 88%;
+  --ring: 217 91% 60%;
+
+  --radius: 0.625rem;
+}
+
+/* -------------------- */
+/* DARK MODE */
+/* -------------------- */
+
+.dark {
+  --background: 222 47% 8%;
+  --foreground: 210 20% 98%;
+
+  --card: 222 47% 10%;
+  --card-foreground: 210 20% 98%;
+
+  --popover: 222 47% 10%;
+  --popover-foreground: 210 20% 98%;
+
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 217 20% 18%;
+  --secondary-foreground: 210 20% 90%;
+
+  --muted: 217 20% 14%;
+  --muted-foreground: 215 16% 57%;
+
+  --accent: 217 20% 16%;
+  --accent-foreground: 210 20% 98%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 217 20% 18%;
+  --input: 217 20% 20%;
+  --ring: 217 91% 60%;
+}
+
+/* -------------------- */
+/* BASE STYLES */
+/* -------------------- */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+      sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+/* -------------------- */
+/* UTILITIES */
+/* -------------------- */
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl;
+  }
+
+  .dark .glass {
+    @apply bg-card/80 backdrop-blur-xl;
+  }
+}
